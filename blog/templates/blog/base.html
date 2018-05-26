@@ -1,26 +1,138 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+      <title>inteli i</title>
+      <!-- <script type="text/javascript" src="script2.js"></script>
+        <title>inteli i</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
+        <! <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    <!-- </head>
+    <body> -->
+
+
+
+      <!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="/static/logo/Logo2.png">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">제어패널<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">아웃사이드 뷰</a></li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</nav> -->
+
+        <!-- <div class="page-header">
           {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
           {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
+        </div> -->
+
+
+    </body>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/static/js/nav_var.js"></script>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<!-- Include the above in your HEAD tag ---------->
+</head>
+
+<div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+    <div class="side-menu">
+
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <div class="brand-wrapper">
+            <!-- Hamburger -->
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Brand -->
+            <div class="brand-name-wrapper">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static "logo/Logo2.png" %}" alt="Logo">
+                </a>
+            </div>
+
+
         </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
+
+    </div>
+
+    <!-- Main Menu -->
+    <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'post_list' %}"><span class="glyphicon glyphicon-send"></span> Sensor State View </a></li>
+            <!-- <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li> -->
+            <li><a href="{% url 'camera_view' %}"><span class="glyphicon glyphicon-cloud"></span> Camera View</a></li>
+
+            <!-- Dropdown-->
+            <li class="panel panel-default" id="dropdown">
+                <a data-toggle="collapse" href="#dropdown-lvl1">
+                    <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
+                </a>
+
+                <!-- Dropdown level 1 -->
+                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+
+                            <!-- Dropdown level 2 -->
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl2">
+                                    <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
+                                </a>
+                                <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </li>
+
+            <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+    </div>
+    <div role="main" class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
-    </body>
+    </div>
+
+    
+
+</div>
 </html>

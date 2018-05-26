@@ -39,3 +39,13 @@ class Post(models.Model): #모델을 정의하는 코드입니다. Post는 모�
         호출하면 Post 모델의 제목 텍스트(string)을 얻게됩니다.
         '''
         return self.title
+
+class Camera(models.Model):
+    name = models.CharField(max_length=200)
+    text = models.TextField()
+    published_date = models.DateTimeField(
+            blank=True, null=True
+    )
+
+    def __str__(self):
+        return self.name
